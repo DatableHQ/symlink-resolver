@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Config = void 0;
 const symlink_helper_1 = require("./symlink-helper");
 exports.Config = {
     rootDir: process.argv[3],

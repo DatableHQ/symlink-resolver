@@ -11,20 +11,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "alwaysStrict": true,
     "outDir": "./",
-    "lib": [
-      "es2017"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ]
+    "lib": ["es2017"]
   },
-  "include": [
-    "./**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["./**/*"],
+  "exclude": ["node_modules"]
 }
