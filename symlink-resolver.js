@@ -21,8 +21,7 @@ scripts.build = () => {
     console.log('Replacing symlinks by real files...');
     helper.findSymlinks(config_1.Config.rootDir).then(files => {
         if (!Object.keys(files).length) {
-            console.error('No single symlink was found! Did you mean to clear?');
-            process.exitCode = 1;
+            console.warn('No single symlink was found! Did you mean to clear?');
             return;
         }
         helper.saveSymlinks(files);
