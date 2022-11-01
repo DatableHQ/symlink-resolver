@@ -21,7 +21,9 @@ scripts.build = () => {
     console.log('Replacing symlinks by real files...');
     helper.findSymlinks(config_1.Config.rootDir).then(files => {
         if (!Object.keys(files).length) {
-            return console.error('No single symlink was found! Did you mean to clear?');
+            console.error('No single symlink was found! Did you mean to clear?');
+            process.exitCode = 1;
+            return;
         }
         helper.saveSymlinks(files);
         // TODO: Move to the helper class
@@ -35,8 +37,10 @@ scripts.clear = () => {
     let symlinksPath = config_1.Config.rootDir + config_1.Config.symlinksFile;
     let savedSymlinks = helper.getSavedSymlinks();
     if (!savedSymlinks) {
-        return console.error('File ' + symlinksPath +
+        console.error('File ' + symlinksPath +
             ' doesn\'t exist! Did you mean to build?');
+        process.exitCode = 1;
+        return;
     }
     console.log('Restoring symlinks...');
     // TODO: move to the helper class
@@ -52,5 +56,6 @@ if (script && typeof scripts[script] === 'function') {
 }
 else {
     console.error('USAGE: Please provide arguments in proper format: build|clear ./symlinks/path');
+    process.exitCode = 1;
 }
 //# sourceMappingURL=symlink-resolver.js.map
