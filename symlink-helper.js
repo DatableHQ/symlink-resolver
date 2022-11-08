@@ -80,11 +80,12 @@ class SymlinkHelper {
         child_process.execSync('mkdir -p ' + path.dirname(target));
         child_process.execSync('cp -R ' + path.resolve(source) + ' ' + target);
     }
-    getRelativePath(path) {
-        for (let i = 0; i < this.nestingLevel; i++) {
-            path = path.replace('../', '');
-        }
-        return path;
+    getRelativePath(destinationPath) {
+        // for (let i = 0; i < this.nestingLevel; i++) {
+        //     path = path.replace('../', '');
+        // }
+        destinationPath = path.resolve(config_1.Config.rootDir, destinationPath);
+        return destinationPath;
     }
     getSavedSymlinks() {
         let savedSymlinks = null;

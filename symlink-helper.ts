@@ -75,11 +75,12 @@ export class SymlinkHelper {
         child_process.execSync('cp -R ' + path.resolve(source) + ' ' + target);
     }
 
-    public getRelativePath(path: string): string {
-        for (let i = 0; i < this.nestingLevel; i++) {
-            path = path.replace('../', '');
-        }
-        return path;
+    public getRelativePath(destinationPath: string): string {
+        // for (let i = 0; i < this.nestingLevel; i++) {
+        //     path = path.replace('../', '');
+        // }
+        destinationPath = path.resolve(Config.rootDir, destinationPath);
+        return destinationPath;
     }
 
     public getSavedSymlinks(): Object {
