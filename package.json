@@ -1,6 +1,6 @@
 {
-  "name": "symlink-resolver",
-  "version": "0.2.1",
+  "name": "symlink-resolver-fork",
+  "version": "0.2.1-fork.1",
   "description": "Simple tool for replacing symlinks by real files and vice versa.",
   "main": "index.js",
   "bin": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DanielKucal/symlink-resolver.git"
+    "url": "git+https://github.com/DatableHQ/symlink-resolver.git"
   },
   "keywords": [
     "symlink",
@@ -29,12 +29,12 @@
     "real",
     "files"
   ],
-  "author": "Daniel Kucal <dkucal@gmail.com>",
+  "author": "Andy Young <andy@apexa.co.uk>",
+  "contributors": [
+    "Daniel Kucal <dkurcal@gmail.com>"
+  ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/DanielKucal/symlink-resolver/issues"
-  },
-  "homepage": "https://github.com/DanielKucal/symlink-resolver#readme",
+  "homepage": "https://github.com/DatableHQ/symlink-resolver#readme",
   "engines": {
     "node": ">= 6.4.0",
     "npm": ">= 3"
